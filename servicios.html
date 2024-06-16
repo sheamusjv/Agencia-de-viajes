@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: linear-gradient(90deg, #4CAF50, #2e7d32);
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .back-to-home {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+        .back-to-home i {
+            margin-right: 5px;
+        }
+        .back-to-home:hover {
+            color: #ffeb3b;
+        }
+        nav {
+            background-color: #333;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        nav a:hover {
+            background-color: #ffeb3b;
+            color: black;
+        }
+        .container {
+            padding: 20px;
+        }
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .service {
+            background-color: white;
+            margin: 10px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .service img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .service:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .contact {
+            background-color: white;
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .contact h2 {
+            color: #4CAF50;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .contact form {
+            display: flex;
+            flex-direction: column;
+        }
+        .contact form input, .contact form textarea {
+            padding: 15px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 100%;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+            font-size: 16px;
+        }
+        .contact form button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .contact form button:hover {
+            background-color: #45a049;
+            transform: translateY(-2px);
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            
+            width: 100%;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="back-to-home"><i class="fas fa-arrow-left"></i> Volver</a>
+        <h1> Servicios de Transporte</h1>
+    </header>
+    <div class="container">
+        <section id="services" class="services">
+            <div class="service">
+                <img src="img/bus.jpg" alt="Transporte en Autobús">
+                <h2>Transporte en Autobús</h2>
+                <p>Ofrecemos cómodos y seguros servicios de transporte en autobús para grupos grandes y pequeños.</p>
+            </div>
+            <div class="service">
+                <img src="img/car.jpg" alt="Alquiler de Coches">
+                <h2>Alquiler de Coches</h2>
+                <p>Rente un coche y explore el destino a su propio ritmo con nuestras opciones de alquiler de coches.</p>
+            </div>
+            <div class="service">
+                <img src="img/van.jpg" alt="Transporte en Van">
+                <h2>Transporte en Van</h2>
+                <p>Ofrecemos servicios de transporte en van para familias y grupos pequeños, con todas las comodidades necesarias.</p>
+            </div>
+        </section>
+        <section id="contact" class="contact">
+            <h2>Contacto</h2>
+            <form>
+                <input type="text" name="name" placeholder="Nombre" required>
+                <input type="email" name="email" placeholder="Correo Electrónico" required>
+                <textarea name="message" rows="5" placeholder="Mensaje" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </div>
+    <footer>
+        <div class="contenedor-footer">
+            <div class="content-foo">
+                <h4>iPhone</h4>
+                <p>923144928</p>
+            </div>
+            <div class="content-foo">
+                <h4>Email</h4>
+                <p>viajestravel@gmail.com</p>
+            </div>
+            <div class="content-foo">
+                <h4>Location</h4>
+                <p>SMP</p>
+            </div>
+        </div>
+        <div>
+            <center>
+                <a href="https://www.youtube.com/@LATAMAirlines_ES"><img src="img/youtube.png" height="30px"></a>
+                <a href="https://www.facebook.com/LATAMPeru"><img src="img/facebook.png" height="30px"></a>
+                <a href="https://github.com/sheamusjv/Agencia-de-viajes.git"><img src="img/github.png" height="30px"></a>
+            </center>
+        </div>
+        <h2 class="titulo-final">&copy; Argentina Indesign | Proyecto Gosu</h2>
+    </footer>
+</body>
+</html>

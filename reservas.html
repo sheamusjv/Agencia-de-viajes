@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservas de Alojamiento</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        header {
+            background-color: #1976d2;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 2em;
+            font-weight: bold;
+            position: relative;
+        }
+        .back-to-home {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        .back-to-home i {
+            margin-right: 5px;
+        }
+        nav {
+            background-color: #2196f3;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        nav a {
+            color: white;
+            margin: 0 20px;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #ffab91;
+        }
+        .container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .accommodations {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            justify-content: center;
+        }
+        .accommodation {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+        .accommodation img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        .accommodation:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        .accommodation:hover img {
+            transform: scale(1.05);
+        }
+        .accommodation-content {
+            padding: 20px;
+            text-align: center;
+        }
+        .accommodation-content h2 {
+            color: #1976d2;
+            margin-bottom: 10px;
+            font-size: 1.5em;
+        }
+        .accommodation-content p {
+            font-size: 1em;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        .accommodation-content button {
+            background-color: #1976d2;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .accommodation-content button:hover {
+            background-color: #1565c0;
+            transform: translateY(-2px);
+        }
+        footer {
+            background-color: #1976d2;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+            font-size: 1em;
+        }
+        /* Estilos del cuadro de reserva */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            width: 300px;
+            text-align: center;
+        }
+        .modal-content input, .modal-content label {
+            display: block;
+            width: calc(100% - 20px);
+            margin: 10px auto;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .modal-content button {
+            background-color: #1976d2;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .modal-content button:hover {
+            background-color: #1565c0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="back-to-home"><i class="fas fa-arrow-left"></i> Volver</a>
+        Reservas de Alojamiento
+    </header>
+    <div class="container">
+        <section id="accommodations" class="accommodations">
+            <div class="accommodation">
+                <img src="img/hotel.jpg" alt="Hotel de Lujo">
+                <div class="accommodation-content">
+                    <h2>Hotel de Lujo</h2>
+                    <p>Disfruta de una estancia inolvidable en nuestros hoteles de lujo con todas las comodidades y servicios exclusivos.</p>
+                    <button onclick="openModal('Hotel de Lujo')">Reservar Ahora</button>
+                </div>
+            </div>
+            <div class="accommodation">
+                <img src="img/hostel.jpg" alt="Hostal Económico">
+                <div class="accommodation-content">
+                    <h2>Hostal Económico</h2>
+                    <p>Opciones de alojamiento económico en nuestros acogedores hostales, ideales para viajeros con presupuesto limitado.</p>
+                    <button onclick="openModal('Hostal Económico')">Reservar Ahora</button>
+                </div>
+            </div>
+            <div class="accommodation">
+                <img src="img/apartamento.jpg" alt="Apartamentos">
+                <div class="accommodation-content">
+                    <h2>Apartamentos</h2>
+                    <p>Alquila un apartamento y siente la comodidad de un hogar con nuestras opciones de apartamentos completamente equipados.</p>
+                    <button onclick="openModal('Apartamentos')">Reservar Ahora</button>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <div class="contenedor-footer">
+            <div class="content-foo">
+                <h4>iPhone</h4>
+                <p>923144928</p>
+            </div>
+            <div class="content-foo">
+                <h4>Email</h4>
+                <p>viajestravel@gmail.com</p>
+            </div>
+            <div class="content-foo">
+                <h4>Location</h4>
+                <p>SMP</p>
+            </div>
+        </div>
+        <div>
+            <center>
+                <a href="https://www.youtube.com/@LATAMAirlines_ES"><img src="img/youtube.png" height="30px"></a>
+                <a href="https://www.facebook.com/LATAMPeru"><img src="img/facebook.png" height="30px"></a>
+                <a href="https://github.com/sheamusjv/Agencia-de-viajes.git"><img src="img/github.png" height="30px"></a>
+            </center>
+        </div>
+        <h2 class="titulo-final">&copy; Argentina Indesign | Proyecto Gosu</h2>
+    </footer>
+
+    <!-- Cuadro de reserva -->
+    <div id="reservationModal" class="modal">
+        <div class="modal-content">
+            <h2 id="modalTitle">Reservar</h2>
+            <form>
+                <label for="name">Nombre</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Correo Electrónico</label>
+                <input type="email" id="email" name="email" required>
+                <label for="date">Fecha de Llegada</label>
+                <input type="date" id="date" name="date" required>
+                <button type="submit">Enviar</button>
+                <button type="button" onclick="closeModal()">Cancelar</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function openModal(accommodation) {
+            document.getElementById('modalTitle').innerText = `Reservar ${accommodation}`;
+            document.getElementById('reservationModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('reservationModal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

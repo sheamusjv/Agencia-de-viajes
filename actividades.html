@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividades de Ocio para Viajes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        header {
+            background-color: #1976d2;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 2em;
+            font-weight: bold;
+            position: relative;
+        }
+        .back-to-home {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        .back-to-home i {
+            margin-right: 5px;
+        }
+        nav {
+            background-color: #2196f3;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        nav a {
+            color: white;
+            margin: 0 20px;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #ffab91;
+        }
+        .container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .activities {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            justify-content: center;
+        }
+        .activity {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+        .activity img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        .activity:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        .activity:hover img {
+            transform: scale(1.05);
+        }
+        .activity-content {
+            padding: 20px;
+            text-align: center;
+        }
+        .activity-content h2 {
+            color: #1976d2;
+            margin-bottom: 10px;
+            font-size: 1.5em;
+        }
+        .activity-content p {
+            font-size: 1em;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        .activity-content button {
+            background-color: #1976d2;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .activity-content button:hover {
+            background-color: #1565c0;
+            transform: translateY(-2px);
+        }
+        footer {
+            background-color: #1976d2;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="back-to-home"><i class="fas fa-arrow-left"></i> Volver</a>
+        Actividades en el Viaje
+    </header>
+    <nav>
+    </nav>
+    <div class="container">
+        <section id="activities" class="activities">
+            <div class="activity">
+                <img src="img/playa.jpg" alt="Playa">
+                <div class="activity-content">
+                    <h2>Playa</h2>
+                    <p>Disfruta de un día soleado en una de nuestras playas paradisíacas.</p>
+                </div>
+            </div>
+            <div class="activity">
+                <img src="img/senderismo.jpg" alt="Senderismo">
+                <div class="activity-content">
+                    <h2>Senderismo</h2>
+                    <p>Explora rutas de senderismo con vistas impresionantes.</p>
+                </div>
+            </div>
+            <div class="activity">
+                <img src="img/turismo.jpg" alt="Turismo Urbano">
+                <div class="activity-content">
+                    <h2>Turismo Urbano</h2>
+                    <p>Descubre las principales atracciones de la ciudad.</p>
+                </div>
+            </div>
+            <div class="activity">
+                <img src="img/esqui.jpg" alt="Esquí">
+                <div class="activity-content">
+                    <h2>Esquí</h2>
+                    <p>Diviértete en las pistas de esquí y disfruta del invierno.</p>
+                </div>
+            </div>
+            <div class="activity">
+                <img src="img/spa.jpg" alt="Spa">
+                <div class="activity-content">
+                    <h2>Spa</h2>
+                    <p>Relájate y rejuvenece con nuestros tratamientos de spa.</p>
+                </div>
+            </div>
+            <div class="activity">
+                <img src="img/crucero.jpg" alt="Crucero">
+                <div class="activity-content">
+                    <h2>Crucero</h2>
+                    <p>Navega por los mares en un crucero de lujo.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <div class="contenedor-footer">
+            <div class="content-foo">
+                <h4>iPhone</h4>
+                <p>923144928</p>
+            </div>
+            <div class="content-foo">
+                <h4>Email</h4>
+                <p>viajestravel@gmail.com</p>
+            </div>
+            <div class="content-foo">
+                <h4>Location</h4>
+                <p>SMP</p>
+            </div>
+        </div>
+        <div>
+            <center>
+                <a href="https://www.youtube.com/@LATAMAirlines_ES"><img src="img/youtube.png" height="30px"></a>
+                <a href="https://www.facebook.com/LATAMPeru"><img src="img/facebook.png" height="30px"></a>
+                <a href="https://github.com/sheamusjv/Agencia-de-viajes.git"><img src="img/github.png" height="30px"></a>
+            </center>
+        </div>
+        <h2 class="titulo-final">&copy; Argentina Indesign | Proyecto Gosu</h2>
+    </footer>
+    <script>
+        function reserveActivity(activity) {
+            document.getElementById('modalTitle').innerText = `Reservar ${activity}`;
+            document.getElementById('activity').value = activity;
+            document.getElementById('reservationModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('reservationModal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
